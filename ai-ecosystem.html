@@ -1,0 +1,1721 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ekosistem AI 2024 - Complete Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            line-height: 1.6;
+            transition: background 0.3s ease;
+        }
+
+        body.dark-mode {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        body.dark-mode .container {
+            background: #1e293b;
+            color: #e2e8f0;
+        }
+
+        .header-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .search-filter-container {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            flex: 1;
+        }
+
+        .search-box {
+            flex: 1;
+            min-width: 250px;
+            position: relative;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 12px 45px 12px 15px;
+            border: 2px solid #e2e8f0;
+            border-radius: 25px;
+            font-size: 1em;
+            transition: all 0.3s ease;
+            background: white;
+        }
+
+        body.dark-mode .search-box input {
+            background: #334155;
+            border-color: #475569;
+            color: #e2e8f0;
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .search-icon {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #718096;
+            font-size: 1.2em;
+        }
+
+        .filter-buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 10px 20px;
+            border: 2px solid #667eea;
+            background: white;
+            color: #667eea;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 0.9em;
+        }
+
+        body.dark-mode .filter-btn {
+            background: #334155;
+            color: #e2e8f0;
+            border-color: #667eea;
+        }
+
+        .filter-btn:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .filter-btn.active {
+            background: #667eea;
+            color: white;
+        }
+
+        .dark-mode-toggle {
+            padding: 10px 20px;
+            border: 2px solid #667eea;
+            background: white;
+            color: #667eea;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        body.dark-mode .dark-mode-toggle {
+            background: #334155;
+            color: #e2e8f0;
+        }
+
+        .dark-mode-toggle:hover {
+            background: #667eea;
+            color: white;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2d3748;
+            font-size: 3em;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        body.dark-mode h1 {
+            background: linear-gradient(135deg, #818cf8 0%, #a78bfa 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #718096;
+            font-size: 1.2em;
+            margin-bottom: 40px;
+        }
+
+        body.dark-mode .subtitle {
+            color: #94a3b8;
+        }
+
+        .section {
+            margin-bottom: 50px;
+        }
+
+        .section.hidden {
+            display: none;
+        }
+
+        .section-title {
+            font-size: 2em;
+            color: #2d3748;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        body.dark-mode .section-title {
+            color: #e2e8f0;
+            border-bottom-color: #818cf8;
+        }
+
+        .icon {
+            font-size: 1.2em;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .card {
+            background: linear-gradient(135deg, #f6f8fb 0%, #ffffff 100%);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        body.dark-mode .card {
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            border-color: #475569;
+        }
+
+        .card.hidden {
+            display: none;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(102, 126, 234, 0.3);
+            border-color: #667eea;
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .card-icon {
+            font-size: 2.5em;
+            filter: grayscale(0);
+        }
+
+        .card-title {
+            font-size: 1.4em;
+            color: #2d3748;
+            font-weight: 700;
+        }
+
+        body.dark-mode .card-title {
+            color: #e2e8f0;
+        }
+
+        .card-subtitle {
+            color: #718096;
+            font-size: 0.9em;
+            margin-bottom: 15px;
+        }
+
+        body.dark-mode .card-subtitle {
+            color: #94a3b8;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.75em;
+            font-weight: 600;
+            margin: 5px 5px 5px 0;
+        }
+
+        .badge-hot {
+            background: linear-gradient(135deg, #ff6b6b, #ff5252);
+            color: white;
+        }
+
+        .badge-new {
+            background: linear-gradient(135deg, #4ecdc4, #44a08d);
+            color: white;
+        }
+
+        .badge-free {
+            background: linear-gradient(135deg, #96e6a1, #5cb85c);
+            color: white;
+        }
+
+        .badge-premium {
+            background: linear-gradient(135deg, #ffd93d, #f39c12);
+            color: white;
+        }
+
+        .badge-opensource {
+            background: linear-gradient(135deg, #a8dadc, #457b9d);
+            color: white;
+        }
+
+        .features {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        .features li {
+            padding: 8px 0;
+            color: #4a5568;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        body.dark-mode .features li {
+            color: #cbd5e1;
+        }
+
+        .features li::before {
+            content: '✓';
+            color: #667eea;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        body.dark-mode .comparison-table {
+            background: #1e293b;
+        }
+
+        .comparison-table th {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .comparison-table td {
+            padding: 15px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        body.dark-mode .comparison-table td {
+            border-bottom-color: #475569;
+            color: #e2e8f0;
+        }
+
+        .comparison-table tr:hover {
+            background: #f7fafc;
+        }
+
+        body.dark-mode .comparison-table tr:hover {
+            background: #334155;
+        }
+
+        .popularity {
+            display: inline-block;
+            font-size: 1.2em;
+        }
+
+        .workflow-diagram {
+            background: linear-gradient(135deg, #667eea15, #764ba215);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 20px 0;
+            border: 2px dashed #667eea;
+        }
+
+        body.dark-mode .workflow-diagram {
+            background: linear-gradient(135deg, #818cf815, #a78bfa15);
+            border-color: #818cf8;
+        }
+
+        .workflow-step {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin: 15px 0;
+            padding: 15px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+        }
+
+        body.dark-mode .workflow-step {
+            background: #334155;
+        }
+
+        .step-number {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .arrow {
+            text-align: center;
+            font-size: 2em;
+            color: #667eea;
+        }
+
+        body.dark-mode .arrow {
+            color: #818cf8;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #fff5f5, #fed7d7);
+            border-left: 5px solid #fc8181;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        body.dark-mode .highlight-box {
+            background: linear-gradient(135deg, #7f1d1d, #991b1b);
+            border-left-color: #ef4444;
+        }
+
+        .highlight-box.info {
+            background: linear-gradient(135deg, #ebf8ff, #bee3f8);
+            border-left-color: #4299e1;
+        }
+
+        body.dark-mode .highlight-box.info {
+            background: linear-gradient(135deg, #1e3a5f, #1e40af);
+            border-left-color: #60a5fa;
+        }
+
+        .highlight-box.success {
+            background: linear-gradient(135deg, #f0fff4, #c6f6d5);
+            border-left-color: #48bb78;
+        }
+
+        body.dark-mode .highlight-box.success {
+            background: linear-gradient(135deg, #14532d, #166534);
+            border-left-color: #4ade80;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+            
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .container {
+                padding: 20px;
+            }
+
+            .header-controls {
+                flex-direction: column;
+            }
+
+            .search-filter-container {
+                width: 100%;
+            }
+        }
+
+        .legend {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin: 20px 0;
+            padding: 15px;
+            background: #f7fafc;
+            border-radius: 10px;
+        }
+
+        body.dark-mode .legend {
+            background: #334155;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .card {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .card:nth-child(1) { animation-delay: 0.1s; }
+        .card:nth-child(2) { animation-delay: 0.2s; }
+        .card:nth-child(3) { animation-delay: 0.3s; }
+        .card:nth-child(4) { animation-delay: 0.4s; }
+        .card:nth-child(5) { animation-delay: 0.5s; }
+        .card:nth-child(6) { animation-delay: 0.6s; }
+
+        .price-tag {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 40px;
+            color: #718096;
+            font-size: 1.2em;
+        }
+
+        body.dark-mode .no-results {
+            color: #94a3b8;
+        }
+
+        .results-count {
+            margin-bottom: 20px;
+            color: #718096;
+            font-size: 0.9em;
+        }
+
+        body.dark-mode .results-count {
+            color: #94a3b8;
+        }
+
+        .footer-credit {
+            margin-top: 15px;
+            font-size: 0.9em;
+            font-weight: 600;
+            color: #667eea;
+        }
+
+        body.dark-mode .footer-credit {
+            color: #818cf8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header-controls">
+            <div class="search-filter-container">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="🔍 Cari tools, features, atau kategori...">
+                    <span class="search-icon">🔍</span>
+                </div>
+                <div class="filter-buttons">
+                    <button type="button" class="filter-btn active" data-filter="all">Semua</button>
+                    <button type="button" class="filter-btn" data-filter="llm">LLM</button>
+                    <button type="button" class="filter-btn" data-filter="coding">Coding</button>
+                    <button type="button" class="filter-btn" data-filter="agent">Agent</button>
+                    <button type="button" class="filter-btn" data-filter="rag">RAG</button>
+                    <button type="button" class="filter-btn" data-filter="automation">Automation</button>
+                </div>
+            </div>
+            <button class="dark-mode-toggle" id="darkModeToggle">
+                <span id="darkModeIcon">🌙</span>
+                <span id="darkModeText">Dark Mode</span>
+            </button>
+        </div>
+
+        <h1>🤖 Ekosistem AI Lengkap 2024</h1>
+        <p class="subtitle">Panduan Komprehensif: LLM, AI Agents, RAG, Coding Tools & Automation</p>
+
+        <div id="resultsCount" class="results-count"></div>
+
+        <!-- Legend -->
+        <div class="legend">
+            <div class="legend-item">
+                <span class="badge badge-hot">🔥 HOT</span>
+                <span>Paling Populer</span>
+            </div>
+            <div class="legend-item">
+                <span class="badge badge-new">✨ NEW</span>
+                <span>Baru 2024</span>
+            </div>
+            <div class="legend-item">
+                <span class="badge badge-free">💚 FREE</span>
+                <span>Gratis</span>
+            </div>
+            <div class="legend-item">
+                <span class="badge badge-opensource">🔓 OSS</span>
+                <span>Open Source</span>
+            </div>
+        </div>
+
+        <!-- LLMs Section -->
+        <div class="section" data-category="llm">
+            <h2 class="section-title">
+                <span class="icon">🧠</span>
+                Large Language Models (LLMs)
+            </h2>
+            
+            <div class="grid">
+                <div class="card" data-name="chatgpt openai gpt-4" data-tags="llm hot premium">
+                    <div class="card-header">
+                        <div class="card-icon">🤖</div>
+                        <div>
+                            <div class="card-title">ChatGPT</div>
+                            <div class="card-subtitle">OpenAI</div>
+                        </div>
+                    </div>
+                    <div class="price-tag">$20/mo</div>
+                    <div>
+                        <span class="badge badge-hot">🔥 Most Popular</span>
+                    </div>
+                    <ul class="features">
+                        <li>GPT-4o & GPT-4 Turbo</li>
+                        <li>Canvas Mode untuk editing</li>
+                        <li>Image generation (DALL-E)</li>
+                        <li>Web browsing & analysis</li>
+                        <li>Custom GPTs</li>
+                    </ul>
+                </div>
+
+                <div class="card" data-name="claude anthropic sonnet" data-tags="llm hot premium">
+                    <div class="card-header">
+                        <div class="card-icon">🎭</div>
+                        <div>
+                            <div class="card-title">Claude</div>
+                            <div class="card-subtitle">Anthropic</div>
+                        </div>
+                    </div>
+                    <div class="price-tag">$20/mo</div>
+                    <div>
+                        <span class="badge badge-hot">🔥 Rising Star</span>
+                    </div>
+                    <ul class="features">
+                        <li>Claude 3.5 Sonnet (Latest)</li>
+                        <li>200K context window</li>
+                        <li>Artifacts untuk code</li>
+                        <li>Excellent reasoning</li>
+                        <li>Safety-focused</li>
+                    </ul>
+                </div>
+
+                <div class="card" data-name="gemini google" data-tags="llm new premium">
+                    <div class="card-header">
+                        <div class="card-icon">✨</div>
+                        <div>
+                            <div class="card-title">Gemini</div>
+                            <div class="card-subtitle">Google</div>
+                        </div>
+                    </div>
+                    <div class="price-tag">$20/mo</div>
+                    <div>
+                        <span class="badge badge-new">✨ 2024</span>
+                    </div>
+                    <ul class="features">
+                        <li>Gemini 1.5 Pro/Flash</li>
+                        <li>2M token context</li>
+                        <li>Multimodal (text, image, video)</li>
+                        <li>Google integration</li>
+                        <li>Deep research mode</li>
+                    </ul>
+                </div>
+
+                <div class="card" data-name="llama meta" data-tags="llm free opensource">
+                    <div class="card-header">
+                        <div class="card-icon">🦙</div>
+                        <div>
+                            <div class="card-title">LLaMA 3</div>
+                            <div class="card-subtitle">Meta</div>
+                        </div>
+                    </div>
+                    <div class="price-tag">FREE</div>
+                    <div>
+                        <span class="badge badge-free">💚 Free</span>
+                        <span class="badge badge-opensource">🔓 Open Source</span>
+                    </div>
+                    <ul class="features">
+                        <li>8B, 70B, 405B models</li>
+                        <li>Self-hostable</li>
+                        <li>Commercial use OK</li>
+                        <li>Fine-tunable</li>
+                        <li>Ollama support</li>
+                    </ul>
+                </div>
+
+                <div class="card" data-name="copilot microsoft" data-tags="llm premium enterprise">
+                    <div class="card-header">
+                        <div class="card-icon">💼</div>
+                        <div>
+                            <div class="card-title">Copilot</div>
+                            <div class="card-subtitle">Microsoft</div>
+                        </div>
+                    </div>
+                    <div class="price-tag">FREE*</div>
+                    <div>
+                        <span class="badge badge-premium">Enterprise</span>
+                    </div>
+                    <ul class="features">
+                        <li>GPT-4 powered</li>
+                        <li>Microsoft 365 integration</li>
+                        <li>Enterprise security</li>
+                        <li>Web access</li>
+                        <li>Image creation</li>
+                    </ul>
+                </div>
+
+                <div class="card" data-name="perplexity search" data-tags="llm hot premium">
+                    <div class="card-header">
+                        <div class="card-icon">🎯</div>
+                        <div>
+                            <div class="card-title">Perplexity AI</div>
+                            <div class="card-subtitle">Perplexity</div>
+                        </div>
+                    </div>
+                    <div class="price-tag">$20/mo</div>
+                    <div>
+                        <span class="badge badge-hot">Search Pro</span>
+                    </div>
+                    <ul class="features">
+                        <li>Real-time search</li>
+                        <li>Citations included</li>
+                        <li>Pro Search mode</li>
+                        <li>Multiple sources</li>
+                        <li>Thread conversations</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- AI Coding Tools Section -->
+        <div class="section" data-category="coding">
+            <h2 class="section-title">
+                <span class="icon">💻</span>
+                AI Coding Assistants & IDEs
+            </h2>
+
+            <div class="highlight-box info">
+                <strong>💡 Trending 2024:</strong> Cursor AI dan Windsurf adalah game-changers untuk AI-powered development!
+            </div>
+
+            <div class="grid">
+                <div class="card" data-name="cursor ai ide" data-tags="coding hot premium">
+                    <div class="card-header">
+                        <div class="card-icon">⚡</div>
+                        <div>
+                            <div class="card-title">Cursor AI</div>
+                            <div class="card-subtitle">Standalone IDE</div>
+                        </div>
+                    </div>
+                    <div class="price-tag">$20/mo</div>
+                    <div>
+                        <span class="badge badge-hot">🔥🔥🔥 VIRAL 2024</span>
+                    </div>
+                    <ul class="features">
+                        <li>Composer: Multi-file editing</li>
+                        <li>Tab: AI autocomplete</li>
+                        <li>Chat with codebase</li>
+                        <li>GPT-4 & Claude support</li>
+                        <li>@-mentions for context</li>
+                    </ul>
+                </div>
+
+                <div class="card" data-name="windsurf codeium ide" data-tags="coding new free">
+                    <div class="card-header">
+                        <div class="card-icon">🌊</div>
+                        <div>
+                            <div class="card-title">Windsurf</div>
+                            <div class="card-subtitle">Codeium IDE</div>
+                        </div>
+                    </div>
+                    <div class="price-tag">FREE</div>
+                    <div>
+                        <span class="badge badge-new">✨ New 2024</span>
+                        <span class="badge badge-hot">🔥 Rising</span>
+                    </div>
+                    <ul class="features">
+                        <li>Cascade: AI flows</li>
+                        <li>Flow Mode coding</li>
+                        <li>Command shortcuts</li>
+                        <li>Fast performance</li>
+                        <li>Generous free tier</li>
+                    </ul>
+                </div>
+
+                <div class="card" data-name="github copilot extension" data-tags="coding premium">
+                    <div class="card-header">
+                        <div class="card-icon">🐙</div>
+                        <div>
+                            <div class="card-title">GitHub Copilot</div>
+                            <div class="card-subtitle">Extension</div>
+                        </div>
+                    </div>
+                    <div class="price-tag">$10/mo</div>
+                    <div>
+                        <span class="badge badge-premium">Industry Standard</span>
+                    </div>
+                    <ul class="features">
+                        <li>VS Code, JetBrains, Vim</li>
+                        <li>Copilot Chat</li>
+                        <li>Workspace agent</li>
+                        <li>Multi-language support</li>
+                        <li>GitHub integration</li>
+                    </ul>
+                </div>
+
+                <div class="card" data-name="codeium extension" data-tags="coding free">
+                    <div class="card-header">
+                        <div class="card-icon">🚀</div>
+                        <div>
+                            <div class="card-title">Codeium</div>
+                            <div class="card-subtitle">Extension</div>
+                        </div>
+                    </div>
+                    <div class="price-tag">FREE</div>
+                    <div>
+                        <span class="badge badge-free">💚 100% Free</span>
+                        <span class="badge badge-hot">Popular</span>
+                    </div>
+                    <ul class="features">
+                        <li>70+ programming languages</li>
+                        <li>Fast autocomplete</li>
+                        <li>Chat support</li>
+                        <li>No telemetry</li>
+                        <li>Unlimited usage</li>
+                    </ul>
+                </div>
+
+                <div class="card" data-name="v0 vercel ui react" data-tags="coding free">
+                    <div class="card-header">
+                        <div class="card-icon">⚛️</div>
+                        <div>
+                            <div class="card-title">v0.dev</div>
+                            <div class="card-subtitle">Vercel</div>
+                        </div>
+                    </div>
+                    <div class="price-tag">Free</div>
+                    <div>
+                        <span class="badge badge-hot">🔥 UI Gen</span>
+                    </div>
+                    <ul class="features">
+                        <li>Prompt to React component</li>
+                        <li>Shadcn/ui integration</li>
+                        <li>Tailwind CSS</li>
+                        <li>Instant preview</li>
+                        <li>Export code</li>
+                    </ul>
+                </div>
+
+                <div class="card" data-name="bolt stackblitz fullstack" data-tags="coding new free">
+                    <div class="card-header">
+                        <div class="card-icon">⚡</div>
+                        <div>
+                            <div class="card-title">bolt.new</div>
+                            <div class="card-subtitle">StackBlitz</div>
+                        </div>
+                    </div>
+                    <div class="price-tag">Free</div>
+                    <div>
+                        <span class="badge badge-new">✨ 2024</span>
+                        <span class="badge badge-hot">Full Stack</span>
+                    </div>
+                    <ul class="features">
+                        <li>Prompt to full app</li>
+                        <li>Instant deployment</li>
+                        <li>WebContainer tech</li>
+                        <li>Node.js in browser</li>
+                        <li>No setup needed</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- AI Agent Frameworks -->
+        <div class="section" data-category="agent">
+            <h2 class="section-title">
+                <span class="icon">🤖</span>
+                AI Agent Frameworks & Platforms
+            </h2>
+
+            <div class="workflow-diagram">
+                <h3>🎯 Choose Your Path:</h3>
+                <div class="workflow-step">
+                    <div class="step-number">1</div>
+                    <div>
+                        <strong>Pemula / No-Code:</strong> Flowise → LangFlow → N8N
+                    </div>
+                </div>
+                <div class="arrow">↓</div>
+                <div class="workflow-step">
+                    <div class="step-number">2</div>
+                    <div>
+                        <strong>Developer / Coding:</strong> LangChain → CrewAI → LangGraph
+                    </div>
+                </div>
+                <div class="arrow">↓</div>
+                <div class="workflow-step">
+                    <div class="step-number">3</div>
+                    <div>
+                        <strong>Enterprise / Production:</strong> LangSmith → Azure OpenAI → Pinecone
+                    </div>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 30px; color: #2d3748;">🔧 Coding Frameworks</h3>
+            <div class="grid">
+                <div class="card" data-name="langchain python javascript" data-tags="agent hot opensource">
+                    <div class="card-header">
+                        <div class="card-icon">🦜</div>
+                        <div>
+                            <div class="card-title">LangChain</div>
+                            <div class="card-subtitle">Python / JavaScript</div>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="badge badge-hot">🔥 Most Used</span>
+                        <span class="badge badge-opensource">🔓 OSS</span>
+                    </div>
+                    <ul class="features">
+                        <li>Chains & Agents</li>
+                        <li>RAG support</li>
+                        <li>100+ integrations</li>
+                        <li>Memory management</li>
+                        <li>LangSmith for monitoring</li>
+                    </ul>
+                </div>
+
+                <div class="card" data-name="crewai python multi-agent" data-tags="agent hot opensource">
+                    <div class="card-header">
+                        <div class="card-icon">👥</div>
+                        <div>
+                            <div class="card-title">CrewAI</div>
+                            <div class="card-subtitle">Python</div>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="badge badge-hot">🔥 Trending</span>
+                        <span class="badge badge-opensource">🔓 OSS</span>
+                    </div>
+                    <ul class="features">
+                        <li>Multi-agent collaboration</li>
+                        <li>Role-based agents</li>
+                        <li>Task delegation</li>
+                        <li>Sequential/Hierarchical</li>
+                        <li>Easy to use</li>
+                    </ul>
+                </div>
+
+                <div class="card" data-name="langgraph langchain stateful" data-tags="agent new premium">
+                    <div class="card-header">
+                        <div class="card-icon">🔗</div>
+                        <div>
+                            <div class="card-title">LangGraph</div>
+                            <div class="card-subtitle">LangChain</div>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="badge badge-new">✨ New</span>
+                        <span class="badge badge-premium">Advanced</span>
+                    </div>
+                    <ul class="features">
+                        <li>Stateful agents</li>
+                        <li>Cyclic graphs</li>
+                        <li>Human-in-the-loop</li>
+                        <li>Streaming support</li>
+                        <li>Complex workflows</li>
+                    </ul>
+                </div>
+
+                <div class="card" data-name="autogpt autonomous" data-tags="agent opensource">
+                    <div class="card-header">
+                        <div class="card-icon">🧪</div>
+                        <div>
+                            <div class="card-title">AutoGPT</div>
+                            <div class="card-subtitle">Autonomous Agent</div>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="badge badge-opensource">🔓 OSS</span>
+                    </div>
+                    <ul class="features">
+                        <li>Fully autonomous</li>
+                        <li>Goal-oriented</li>
+                        <li>Self-prompting</li>
+                        <li>Internet access</li>
+                        <li>File operations</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 30px; color: #2d3748;">🎨 No-Code / Low-Code Platforms</h3>
+            <div class="grid">
+                <div class="card" data-name="flowise visual builder" data-tags="agent hot free opensource">
+                    <div class="card-header">
+                        <div class="card-icon">🌊</div>
+                        <div>
+                            <div class="card-title">Flowise</div>
+                            <div class="card-subtitle">Visual Builder</div>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="badge badge-hot">🔥 Popular</span>
+                        <span class="badge badge-free">💚 Free</span>
+                        <span class="badge badge-opensource">🔓 OSS</span>
+                    </div>
+                    <ul class="features">
+                        <li>Drag & drop UI</li>
+                        <li>LangChain visual</li>
+                        <li>Built-in templates</li>
+                        <li>Self-hostable</li>
+                        <li>API endpoints</li>
+                    </ul>
+                </div>
+
+                <div class="card" data-name="langflow visual builder" data-tags="agent free opensource">
+                    <div class="card-header">
+                        <div class="card-icon">⚡</div>
+                        <div>
+                            <div class="card-title">LangFlow</div>
+                            <div class="card-subtitle">Visual Builder</div>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="badge badge-opensource">🔓 OSS</span>
+                        <span class="badge badge-free">💚 Free</span>
+                    </div>
+                    <ul class="features">
+                        <li>React-based UI</li>
+                        <li>Component library</li>
+                        <li>Export to Python</li>
+                        <li>Custom components</li>
+                        <li>Cloud or local</li>
+                    </ul>
+                </div>
+
+                <div class="card" data-name="n8n workflow automation" data-tags="agent hot opensource automation">
+                    <div class="card-header">
+                        <div class="card-icon">🔧</div>
+                        <div>
+                            <div class="card-title">N8N</div>
+                            <div class="card-subtitle">Workflow Automation</div>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="badge badge-hot">🔥 Popular</span>
+                        <span class="badge badge-opensource">🔓 OSS</span>
+                    </div>
+                    <ul class="features">
+                        <li>400+ integrations</li>
+                        <li>AI nodes</li>
+                        <li>Self-hosted</li>
+                        <li>Cron scheduling</li>
+                        <li>Error handling</li>
+                    </ul>
+                </div>
+
+                <div class="card" data-name="botpress chatbot" data-tags="agent opensource">
+                    <div class="card-header">
+                        <div class="card-icon">🤖</div>
+                        <div>
+                            <div class="card-title">Botpress</div>
+                            <div class="card-subtitle">Chatbot Platform</div>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="badge badge-opensource">🔓 OSS</span>
+                    </div>
+                    <ul class="features">
+                        <li>Visual flow builder</li>
+                        <li>NLU built-in</li>
+                        <li>Multi-channel</li>
+                        <li>Analytics dashboard</li>
+                        <li>Plugin system</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- RAG & Vector DB -->
+        <div class="section" data-category="rag">
+            <h2 class="section-title">
+                <span class="icon">📚</span>
+                RAG & Vector Databases
+            </h2>
+
+            <div class="highlight-box success">
+                <strong>💡 RAG Best Practice:</strong> LlamaIndex (data management) + Pinecone/Weaviate (vector store) + LangChain (orchestration)
+            </div>
+
+            <h3 style="margin-top: 30px; color: #2d3748;">🗄️ Vector Databases</h3>
+            <div class="grid">
+                <div class="card" data-name="pinecone vector database" data-tags="rag hot">
+                    <div class="card-header">
+                        <div class="card-icon">🌲</div>
+                        <div>
+                            <div class="card-title">Pinecone</div>
+                            <div class="card-subtitle">Managed Vector DB</div>
+                        </div>
+                    </div>
+                    <div class="price-tag">Free tier</div>
+                    <div>
+                        <span class="badge badge-hot">🔥 Most Popular</span>
+                    </div>
+                    <ul class="features">
+                        <li>Fully managed</li>
+                        <li>Fast performance</li>
+                        <li>Hybrid search</li>
+                        <li>Metadata filtering</li>
+                        <li>Easy integration</li>
+                    </ul>
+                </div>
+
+                <div class="card" data-name="weaviate vector database" data-tags="rag opensource">
+                    <div class="card-header">
+                        <div class="card-icon">🔷</div>
+                        <div>
+                            <div class="card-title">Weaviate</div>
+                            <div class="card-subtitle">Open Source</div>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="badge badge-opensource">🔓 OSS</span>
+                        <span class="badge badge-hot">Enterprise</span>
+                    </div>
+                    <ul class="features">
+                        <li>GraphQL API</li>
+                        <li>Multi-modal support</li>
+                        <li>Semantic search</li>
+                        <li>Cloud or self-host</li>
+                        <li>Vector + object storage</li>
+                    </ul>
+                </div>
+
+                <div class="card" data-name="chromadb vector database" data-tags="rag free opensource">
+                    <div class="card-header">
+                        <div class="card-icon">🎨</div>
+                        <div>
+                            <div class="card-title">ChromaDB</div>
+                            <div class="card-subtitle">Lightweight</div>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="badge badge-free">💚 Free</span>
+                        <span class="badge badge-opensource">🔓 OSS</span>
+                    </div>
+                    <ul class="features">
+                        <li>Easy to use</li>
+                        <li>Python-first</li>
+                        <li>In-memory option</li>
+                        <li>Great for prototyping</li>
+                        <li>Fast setup</li>
+                    </ul>
+                </div>
+
+                <div class="card" data-name="qdrant vector database" data-tags="rag opensource">
+                    <div class="card-header">
+                        <div class="card-icon">🚀</div>
+                        <div>
+                            <div class="card-title">Qdrant</div>
+                            <div class="card-subtitle">High Performance</div>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="badge badge-opensource">🔓 OSS</span>
+                    </div>
+                    <ul class="features">
+                        <li>Rust-based (fast!)</li>
+                        <li>Filtering support</li>
+                        <li>Sharding & replication</li>
+                        <li>Cloud available</li>
+                        <li>REST & gRPC API</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 30px; color: #2d3748;">📖 RAG Frameworks</h3>
+            <div class="grid">
+                <div class="card" data-name="llamaindex rag framework" data-tags="rag hot opensource">
+                    <div class="card-header">
+                        <div class="card-icon">🦙</div>
+                        <div>
+                            <div class="card-title">LlamaIndex</div>
+                            <div class="card-subtitle">Data Framework</div>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="badge badge-hot">🔥 RAG Leader</span>
+                        <span class="badge badge-opensource">🔓 OSS</span>
+                    </div>
+                    <ul class="features">
+                        <li>Data connectors</li>
+                        <li>Index management</li>
+                        <li>Query engines</li>
+                        <li>Document processing</li>
+                        <li>Agent integration</li>
+                    </ul>
+                </div>
+
+                <div class="card" data-name="haystack rag framework" data-tags="rag opensource">
+                    <div class="card-header">
+                        <div class="card-icon">🔍</div>
+                        <div>
+                            <div class="card-title">Haystack</div>
+                            <div class="card-subtitle">deepset</div>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="badge badge-opensource">🔓 OSS</span>
+                    </div>
+                    <ul class="features">
+                        <li>Pipeline-based</li>
+                        <li>Production-ready</li>
+                        <li>Multiple retrievers</li>
+                        <li>Document stores</li>
+                        <li>Evaluation tools</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Workflow Automation -->
+        <div class="section" data-category="automation">
+            <h2 class="section-title">
+                <span class="icon">⚙️</span>
+                Workflow Automation Tools
+            </h2>
+
+            <div class="grid">
+                <div class="card" data-name="n8n workflow automation" data-tags="automation hot opensource">
+                    <div class="card-header">
+                        <div class="card-icon">🔧</div>
+                        <div>
+                            <div class="card-title">N8N</div>
+                            <div class="card-subtitle">Open Source</div>
+                        </div>
+                    </div>
+                    <div class="price-tag">FREE</div>
+                    <div>
+                        <span class="badge badge-hot">🔥 Popular</span>
+                        <span class="badge badge-opensource">🔓 OSS</span>
+                    </div>
+                    <ul class="features">
+                        <li>400+ integrations</li>
+                        <li>Self-hosted</li>
+                        <li>Visual workflow builder</li>
+                        <li>Custom nodes</li>
+                        <li>Cron scheduling</li>
+                    </ul>
+                </div>
+
+                <div class="card" data-name="make.com workflow automation" data-tags="automation">
+                    <div class="card-header">
+                        <div class="card-icon">🎯</div>
+                        <div>
+                            <div class="card-title">Make.com</div>
+                            <div class="card-subtitle">Visual Platform</div>
+                        </div>
+                    </div>
+                    <div class="price-tag">Free tier</div>
+                    <div>
+                        <span class="badge badge-hot">User Friendly</span>
+                    </div>
+                    <ul class="features">
+                        <li>1000+ app integrations</li>
+                        <li>Visual scenario builder</li>
+                        <li>Data mapping</li>
+                        <li>Error handling</li>
+                        <li>Templates library</li>
+                    </ul>
+                </div>
+
+                <div class="card" data-name="zapier workflow automation" data-tags="automation premium">
+                    <div class="card-header">
+                        <div class="card-icon">⚡</div>
+                        <div>
+                            <div class="card-title">Zapier</div>
+                            <div class="card-subtitle">Industry Standard</div>
+                        </div>
+                    </div>
+                    <div class="price-tag">Free tier</div>
+                    <div>
+                        <span class="badge badge-premium">6000+ Apps</span>
+                    </div>
+                    <ul class="features">
+                        <li>Largest app ecosystem</li>
+                        <li>Easy to use</li>
+                        <li>Multi-step zaps</li>
+                        <li>Filters & paths</li>
+                        <li>AI-powered features</li>
+                    </ul>
+                </div>
+
+                <div class="card" data-name="activepieces workflow automation" data-tags="automation new opensource">
+                    <div class="card-header">
+                        <div class="card-icon">🎨</div>
+                        <div>
+                            <div class="card-title">Activepieces</div>
+                            <div class="card-subtitle">Modern OSS</div>
+                        </div>
+                    </div>
+                    <div class="price-tag">FREE</div>
+                    <div>
+                        <span class="badge badge-new">✨ Modern</span>
+                        <span class="badge badge-opensource">🔓 OSS</span>
+                    </div>
+                    <ul class="features">
+                        <li>TypeScript-based</li>
+                        <li>Modern UI</li>
+                        <li>Self-hosted</li>
+                        <li>Active development</li>
+                        <li>Community pieces</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Comparison Table -->
+        <div class="section" data-category="comparison">
+            <h2 class="section-title">
+                <span class="icon">📊</span>
+                Quick Comparison
+            </h2>
+
+            <h3 style="margin-top: 30px; color: #2d3748;">AI Coding Tools</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Tool</th>
+                        <th>Type</th>
+                        <th>Price</th>
+                        <th>Best For</th>
+                        <th>Popularity</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Cursor AI</strong></td>
+                        <td>Standalone IDE</td>
+                        <td>$20/mo</td>
+                        <td>Full development</td>
+                        <td><span class="popularity">🔥🔥🔥🔥🔥</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Windsurf</strong></td>
+                        <td>Standalone IDE</td>
+                        <td>Free</td>
+                        <td>Fast AI coding</td>
+                        <td><span class="popularity">🔥🔥🔥🔥</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>GitHub Copilot</strong></td>
+                        <td>Extension</td>
+                        <td>$10/mo</td>
+                        <td>Multi-IDE support</td>
+                        <td><span class="popularity">🔥🔥🔥🔥🔥</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Codeium</strong></td>
+                        <td>Extension</td>
+                        <td>FREE</td>
+                        <td>Free alternative</td>
+                        <td><span class="popularity">🔥🔥🔥🔥</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>v0.dev</strong></td>
+                        <td>Web Platform</td>
+                        <td>Free</td>
+                        <td>UI components</td>
+                        <td><span class="popularity">🔥🔥🔥🔥</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>bolt.new</strong></td>
+                        <td>Web Platform</td>
+                        <td>Free</td>
+                        <td>Full stack apps</td>
+                        <td><span class="popularity">🔥🔥🔥</span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top: 30px; color: #2d3748;">LLMs</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Model</th>
+                        <th>Company</th>
+                        <th>Price</th>
+                        <th>Strengths</th>
+                        <th>Context</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>GPT-4o</strong></td>
+                        <td>OpenAI</td>
+                        <td>$20/mo</td>
+                        <td>General purpose, plugins</td>
+                        <td>128K</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Claude 3.5 Sonnet</strong></td>
+                        <td>Anthropic</td>
+                        <td>$20/mo</td>
+                        <td>Reasoning, coding</td>
+                        <td>200K</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Gemini 1.5 Pro</strong></td>
+                        <td>Google</td>
+                        <td>$20/mo</td>
+                        <td>Multimodal, long context</td>
+                        <td>2M</td>
+                    </tr>
+                    <tr>
+                        <td><strong>LLaMA 3 405B</strong></td>
+                        <td>Meta</td>
+                        <td>FREE</td>
+                        <td>Open source, self-host</td>
+                        <td>128K</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Use Case Recommendations -->
+        <div class="section" data-category="recommendations">
+            <h2 class="section-title">
+                <span class="icon">🎯</span>
+                Rekomendasi Berdasarkan Use Case
+            </h2>
+
+            <div class="workflow-diagram">
+                <h3>🚀 Untuk Pemula (No-Code)</h3>
+                <div class="workflow-step">
+                    <div class="step-number">1</div>
+                    <div><strong>Chatbot sederhana:</strong> Flowise + ChatGPT API</div>
+                </div>
+                <div class="workflow-step">
+                    <div class="step-number">2</div>
+                    <div><strong>RAG application:</strong> Flowise + Pinecone + OpenAI</div>
+                </div>
+                <div class="workflow-step">
+                    <div class="step-number">3</div>
+                    <div><strong>Workflow automation:</strong> N8N + AI nodes</div>
+                </div>
+            </div>
+
+            <div class="workflow-diagram">
+                <h3>💻 Untuk Developer</h3>
+                <div class="workflow-step">
+                    <div class="step-number">1</div>
+                    <div><strong>RAG system:</strong> LangChain + LlamaIndex + Pinecone</div>
+                </div>
+                <div class="workflow-step">
+                    <div class="step-number">2</div>
+                    <div><strong>Multi-agent:</strong> CrewAI + GPT-4</div>
+                </div>
+                <div class="workflow-step">
+                    <div class="step-number">3</div>
+                    <div><strong>Complex workflows:</strong> LangGraph + LangSmith</div>
+                </div>
+            </div>
+
+            <div class="workflow-diagram">
+                <h3>🏢 Untuk Enterprise</h3>
+                <div class="workflow-step">
+                    <div class="step-number">1</div>
+                    <div><strong>Secure deployment:</strong> Azure OpenAI + Private endpoints</div>
+                </div>
+                <div class="workflow-step">
+                    <div class="step-number">2</div>
+                    <div><strong>Monitoring:</strong> LangSmith + Weights & Biases</div>
+                </div>
+                <div class="workflow-step">
+                    <div class="step-number">3</div>
+                    <div><strong>Vector storage:</strong> Weaviate/Pinecone Enterprise</div>
+                </div>
+            </div>
+
+            <div class="workflow-diagram">
+                <h3>⚡ Untuk Rapid Development</h3>
+                <div class="workflow-step">
+                    <div class="step-number">1</div>
+                    <div><strong>UI prototyping:</strong> v0.dev + Cursor AI</div>
+                </div>
+                <div class="workflow-step">
+                    <div class="step-number">2</div>
+                    <div><strong>Full app MVP:</strong> bolt.new + Windsurf</div>
+                </div>
+                <div class="workflow-step">
+                    <div class="step-number">3</div>
+                    <div><strong>AI features:</strong> LangChain + Vercel AI SDK</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Key Takeaways -->
+        <div class="section" data-category="takeaways">
+            <h2 class="section-title">
+                <span class="icon">💡</span>
+                Key Takeaways
+            </h2>
+
+            <div class="highlight-box">
+                <h3>🎯 Kategori Utama</h3>
+                <ul class="features">
+                    <li><strong>LLMs:</strong> ChatGPT, Claude, Gemini - untuk AI capabilities</li>
+                    <li><strong>Coding Tools:</strong> Cursor, Windsurf, Copilot - untuk development</li>
+                    <li><strong>Agent Frameworks:</strong> LangChain, CrewAI - untuk building AI apps</li>
+                    <li><strong>No-Code:</strong> Flowise, N8N - untuk non-developers</li>
+                    <li><strong>RAG:</strong> LlamaIndex + Pinecone - untuk knowledge retrieval</li>
+                </ul>
+            </div>
+
+            <div class="highlight-box info">
+                <h3>🔥 Trending 2024</h3>
+                <ul class="features">
+                    <li><strong>Cursor AI:</strong> Revolutionary AI-powered IDE</li>
+                    <li><strong>Windsurf:</strong> Fast & free Cursor alternative</li>
+                    <li><strong>Claude 3.5 Sonnet:</strong> Best reasoning model</li>
+                    <li><strong>v0.dev & bolt.new:</strong> Instant app generation</li>
+                    <li><strong>LangGraph:</strong> Next-gen agent orchestration</li>
+                </ul>
+            </div>
+
+            <div class="highlight-box success">
+                <h3>💰 Best Free Options</h3>
+                <ul class="features">
+                    <li><strong>LLM:</strong> LLaMA 3 (open source)</li>
+                    <li><strong>Coding:</strong> Codeium (100% free, unlimited)</li>
+                    <li><strong>IDE:</strong> Windsurf (generous free tier)</li>
+                    <li><strong>Frameworks:</strong> LangChain, CrewAI (OSS)</li>
+                    <li><strong>Workflow:</strong> N8N (self-hosted)</li>
+                    <li><strong>Vector DB:</strong> ChromaDB (lightweight, free)</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div style="text-align: center; margin-top: 50px; padding-top: 30px; border-top: 2px solid #e2e8f0; color: #718096;">
+            <p style="font-size: 0.9em;">
+                🚀 <strong>Ekosistem AI berkembang sangat cepat!</strong><br>
+                Dokumen ini dibuat berdasarkan teknologi terpopuler hingga Desember 2024
+            </p>
+            <p style="margin-top: 10px; font-size: 0.85em;">
+                💡 Tip: Mulai dengan tools free/open-source, kemudian upgrade sesuai kebutuhan
+            </p>
+            <p class="footer-credit">
+                byIQ 2025
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Dark Mode Toggle
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const darkModeIcon = document.getElementById('darkModeIcon');
+        const darkModeText = document.getElementById('darkModeText');
+        const body = document.body;
+
+        // Check for saved theme preference or default to light mode
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        if (currentTheme === 'dark') {
+            body.classList.add('dark-mode');
+            darkModeIcon.textContent = '☀️';
+            darkModeText.textContent = 'Light Mode';
+        }
+
+        darkModeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            const isDark = body.classList.contains('dark-mode');
+            
+            if (isDark) {
+                darkModeIcon.textContent = '☀️';
+                darkModeText.textContent = 'Light Mode';
+                localStorage.setItem('theme', 'dark');
+            } else {
+                darkModeIcon.textContent = '🌙';
+                darkModeText.textContent = 'Dark Mode';
+                localStorage.setItem('theme', 'light');
+            }
+        });
+
+        // Search Functionality
+        const searchInput = document.getElementById('searchInput');
+        const cards = document.querySelectorAll('.card');
+        const sections = document.querySelectorAll('.section');
+        const resultsCount = document.getElementById('resultsCount');
+
+        function updateResultsCount() {
+            const visibleCards = Array.from(cards).filter(card => !card.classList.contains('hidden'));
+            const totalCards = cards.length;
+            
+            if (visibleCards.length === totalCards) {
+                resultsCount.textContent = '';
+            } else {
+                resultsCount.textContent = `Menampilkan ${visibleCards.length} dari ${totalCards} tools`;
+            }
+        }
+
+        function filterCards() {
+            const searchTerm = searchInput.value.toLowerCase().trim();
+            const activeFilterBtn = document.querySelector('.filter-btn.active');
+            const activeFilter = activeFilterBtn?.dataset.filter || 'all';
+            
+            let visibleCount = 0;
+
+            cards.forEach(card => {
+                const cardName = card.dataset.name || '';
+                const cardTags = card.dataset.tags || '';
+                const cardText = card.textContent.toLowerCase();
+                
+                const matchesSearch = searchTerm === '' || 
+                    cardName.includes(searchTerm) || 
+                    cardTags.includes(searchTerm) || 
+                    cardText.includes(searchTerm);
+                
+                const cardSection = card.closest('.section');
+                const cardCategory = cardSection?.dataset.category || '';
+                
+                // Check if card matches filter
+                let matchesFilter = true;
+                if (activeFilter !== 'all') {
+                    matchesFilter = cardCategory === activeFilter || cardTags.includes(activeFilter);
+                }
+                
+                if (matchesSearch && matchesFilter) {
+                    card.classList.remove('hidden');
+                    visibleCount++;
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+
+            // Hide sections with no visible cards when filter/search is active
+            sections.forEach(section => {
+                if (section.dataset.category) {
+                    const sectionCards = section.querySelectorAll('.card');
+                    const visibleCards = Array.from(sectionCards).filter(card => !card.classList.contains('hidden'));
+                    
+                    // Hide section if no visible cards AND (search is active OR filter is not 'all')
+                    const shouldHide = visibleCards.length === 0 && (searchTerm !== '' || activeFilter !== 'all');
+                    
+                    if (shouldHide) {
+                        section.classList.add('hidden');
+                    } else {
+                        section.classList.remove('hidden');
+                    }
+                } else {
+                    // For sections without category (comparison, recommendations, takeaways)
+                    // Only hide if search is active and no matches
+                    if (searchTerm !== '') {
+                        const sectionText = section.textContent.toLowerCase();
+                        if (!sectionText.includes(searchTerm)) {
+                            section.classList.add('hidden');
+                        } else {
+                            section.classList.remove('hidden');
+                        }
+                    } else {
+                        section.classList.remove('hidden');
+                    }
+                }
+            });
+
+            updateResultsCount();
+        }
+
+        searchInput.addEventListener('input', filterCards);
+
+        // Filter Buttons
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                filterButtons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                filterCards();
+            });
+        });
+
+        // Initial count
+        updateResultsCount();
+    </script>
+</body>
+</html>
