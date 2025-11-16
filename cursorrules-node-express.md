@@ -375,6 +375,7 @@ async function transferMoney(fromId: string, toId: string, amount: number) {
 // ✅ GOOD: JWT authentication middleware
 import jwt from 'jsonwebtoken';
 import { Request, Response, NextFunction } from 'express';
+import { logger } from '../utils/logger';
 
 export function authMiddleware(req: Request, res: Response, next: NextFunction) {
   try {
@@ -384,7 +385,14 @@ export function authMiddleware(req: Request, res: Response, next: NextFunction) 
       return res.status(401).json({ success: false, error: 'No token provided' });
     }
 
-    const decoded = jwt.verify(token, process.env.JWT_SECRET!) as { userId: string };
+    const secret = process.env.JWT_SECRET;
+    if (!secret) {
+      // This check is ideally done once at application startup.
+      logger.error('FATAL ERROR: JWT_SECRET is not defined.');
+      return res.status(500).json({ success: false, error: 'Internal server error' });
+    }
+
+    const decoded = jwt.verify(token, secret) as { userId: string };
     req.userId = decoded.userId;
     next();
   } catch (error) {
