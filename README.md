@@ -1,10 +1,22 @@
 # Cursor AI Model Selection Templates
 
-**Version**: 1.0.0  
-**Last Updated**: 2025-01-16  
-**Purpose**: Context-specific `.cursorrules` templates for optimal AI model selection
+<div align="center">
 
-📋 **[View Changelog](./CHANGELOG.md)** | 📖 **[Complete Model Reference](./Cursor%20AI%20Models%20-%20Complete%20Reference.md)**
+![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
+![License](https://img.shields.io/badge/license-MIT-green.svg)
+![Last Updated](https://img.shields.io/badge/last%20updated-2025--01--16-lightgrey.svg)
+![GitHub](https://img.shields.io/github/stars/indraqubit/Cursor-Models?style=social)
+![GitHub forks](https://img.shields.io/github/forks/indraqubit/Cursor-Models?style=social)
+
+[![Cursor AI](https://img.shields.io/badge/Cursor-AI%20Models-purple.svg)](https://cursor.sh)
+[![Documentation](https://img.shields.io/badge/docs-complete-brightgreen.svg)](./Cursor%20AI%20Models%20-%20Complete%20Reference.md)
+[![Changelog](https://img.shields.io/badge/changelog-available-orange.svg)](./CHANGELOG.md)
+
+**Context-specific `.cursorrules` templates for optimal AI model selection**
+
+[📋 Changelog](./CHANGELOG.md) • [📖 Complete Reference](./Cursor%20AI%20Models%20-%20Complete%20Reference.md) • [🚀 Quick Start](#-how-to-use)
+
+</div>
 
 ---
 
@@ -18,11 +30,30 @@ This directory contains `.cursorrules` templates optimized for different develop
 - **Anti-Patterns** - What to avoid
 - **Model Selection Guide** - When to use which model
 
+### 🤖 Supported AI Models
+
+![Claude](https://img.shields.io/badge/Claude-Sonnet%204.5-orange.svg)
+![Claude](https://img.shields.io/badge/Claude-Opus%204.1-orange.svg)
+![GPT](https://img.shields.io/badge/GPT-5.1%20Codex-green.svg)
+![Composer](https://img.shields.io/badge/Composer-1.0-purple.svg)
+![Haiku](https://img.shields.io/badge/Haiku-4.5-blue.svg)
+![Gemini](https://img.shields.io/badge/Gemini-2.5%20Pro-yellow.svg)
+![Grok](https://img.shields.io/badge/Grok-4-red.svg)
+![DeepSeek](https://img.shields.io/badge/DeepSeek-V3.1-lightblue.svg)
+![Kimi](https://img.shields.io/badge/Kimi-K2-pink.svg)
+
+**See [Complete Model Reference](./Cursor%20AI%20Models%20-%20Complete%20Reference.md) for full list**
+
 ---
 
 ## 📁 Available Templates
 
 ### 1. **C++/JUCE 8 Audio Plugins** (`cursorrules-cpp-juce.md`)
+
+![C++](https://img.shields.io/badge/C++-17/20-blue.svg)
+![JUCE](https://img.shields.io/badge/JUCE-8.0-orange.svg)
+![DSP](https://img.shields.io/badge/DSP-Audio%20Processing-purple.svg)
+
 **Context**: Audio Plugins, DSP, Real-time Systems  
 **Tech Stack**: C++17-20, JUCE 8
 
@@ -41,6 +72,12 @@ This directory contains `.cursorrules` templates optimized for different develop
 ---
 
 ### 2. **React/Vite Modern Web Apps** (`cursorrules-react-vite.md`)
+
+![React](https://img.shields.io/badge/React-18-blue.svg)
+![Vite](https://img.shields.io/badge/Vite-Latest-yellow.svg)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue.svg)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3.0-38bdf8.svg)
+
 **Context**: Modern Web Apps with React, Vite, TypeScript  
 **Tech Stack**: React 18, Vite, TypeScript, TailwindCSS
 
@@ -59,6 +96,12 @@ This directory contains `.cursorrules` templates optimized for different develop
 ---
 
 ### 3. **Node.js/Express Backend APIs** (`cursorrules-node-express.md`)
+
+![Node.js](https://img.shields.io/badge/Node.js-20+-green.svg)
+![Express](https://img.shields.io/badge/Express-4.x-lightgrey.svg)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue.svg)
+![API](https://img.shields.io/badge/API-RESTful-red.svg)
+
 **Context**: Backend APIs, Express, Databases  
 **Tech Stack**: Node.js, Express.js, TypeScript
 
@@ -77,6 +120,12 @@ This directory contains `.cursorrules` templates optimized for different develop
 ---
 
 ### 4. **Scripting & Automation** (`cursorrules-scripting.md`)
+
+![Python](https://img.shields.io/badge/Python-3.x-blue.svg)
+![Shell](https://img.shields.io/badge/Shell-Bash/Zsh-green.svg)
+![Node.js](https://img.shields.io/badge/Node.js-Scripts-green.svg)
+![DevOps](https://img.shields.io/badge/DevOps-Automation-orange.svg)
+
 **Context**: Scripting, Automation, DevOps, Utilities  
 **Tech Stack**: Python, Shell (Bash/Zsh), Node.js scripts
 
