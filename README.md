@@ -1,8 +1,10 @@
 # Cursor AI Model Selection Templates
 
 **Version**: 1.0.0  
-**Last Updated**: 2025-11-16  
+**Last Updated**: 2025-01-16  
 **Purpose**: Context-specific `.cursorrules` templates for optimal AI model selection
+
+📋 **[View Changelog](./CHANGELOG.md)** | 📖 **[Complete Model Reference](./Cursor%20AI%20Models%20-%20Complete%20Reference.md)**
 
 ---
 
@@ -293,7 +295,8 @@ If you work on multiple projects with different contexts:
 
 - **Cursor Documentation**: https://cursor.sh/docs
 - **Cursor Rules Guide**: See `CURSOR_EFFICIENCY_GUIDE.md` in your project
-- **Model Reference**: See model documentation in Cursor settings
+- **Model Reference**: See [Complete Model Reference](./Cursor%20AI%20Models%20-%20Complete%20Reference.md)
+- **Changelog**: See [CHANGELOG.md](./CHANGELOG.md) for version history and updates
 
 ---
 
