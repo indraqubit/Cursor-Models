@@ -250,16 +250,16 @@ type User = {
 ### Generic Components
 ```tsx
 // ✅ GOOD: Generic list component
-interface ListProps<T> {
+interface ListProps<T extends { id: string | number }> {
   items: T[];
   renderItem: (item: T) => React.ReactNode;
 }
 
-export function List<T>({ items, renderItem }: ListProps<T>) {
+export function List<T extends { id: string | number }>({ items, renderItem }: ListProps<T>) {
   return (
     <ul>
-      {items.map((item, index) => (
-        <li key={index}>{renderItem(item)}</li>
+      {items.map((item) => (
+        <li key={item.id}>{renderItem(item)}</li>
       ))}
     </ul>
   );
@@ -347,25 +347,29 @@ export default defineConfig({
 
 ### Error Boundaries
 ```tsx
-// ✅ GOOD: Error boundary component
-class ErrorBoundary extends React.Component {
-  state = { hasError: false };
+// ✅ GOOD: Error boundary using react-error-boundary library
+import { ErrorBoundary } from 'react-error-boundary';
 
-  static getDerivedStateFromError(error: Error) {
-    return { hasError: true };
-  }
-
-  componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
-    console.error('Error caught:', error, errorInfo);
-  }
-
-  render() {
-    if (this.state.hasError) {
-      return <ErrorFallback />;
-    }
-    return this.props.children;
-  }
+function ErrorFallback({ error, resetErrorBoundary }: { error: Error; resetErrorBoundary: () => void }) {
+  return (
+    <div role="alert">
+      <p>Something went wrong:</p>
+      <pre>{error.message}</pre>
+      <button onClick={resetErrorBoundary}>Try again</button>
+    </div>
+  );
 }
+
+const App = () => (
+  <ErrorBoundary
+    FallbackComponent={ErrorFallback}
+    onReset={() => {
+      // reset the state of your app
+    }}
+  >
+    <MyComponent />
+  </ErrorBoundary>
+);
 ```
 
 ### Async Error Handling
