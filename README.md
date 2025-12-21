@@ -119,7 +119,30 @@ This directory contains `.cursorrules` templates optimized for different develop
 
 ---
 
-### 4. **Scripting & Automation** (`cursorrules-scripting.md`)
+### 4. **JavaScript Strict Mode Configuration** (`cursorrules-javascript-strict-mode.md`)
+
+<img src="https://img.shields.io/badge/JavaScript-ES6+-yellow.svg">
+<img src="https://img.shields.io/badge/Strict%20Mode-Enforcement-red.svg">
+<img src="https://img.shields.io/badge/ESLint-Configuration-blue.svg">
+
+**Context**: JavaScript Strict Mode, Code Quality, Runtime Safety  
+**Tech Stack**: JavaScript, ESLint, TypeScript, Babel
+
+**Best For:**
+- Enforcing strict mode globally
+- Code quality and safety
+- Production-grade JavaScript
+- Migrating to strict mode
+
+**Recommended Models:**
+- Claude Sonnet 4.5 - Strict mode architecture
+- Composer 1 - Multi-file strict mode implementation
+- GPT-5.1 Codex - Code generation with strict compliance
+- **Budget**: Haiku 4.5, GPT-5.1 Codex Fast (Unlimited) ⭐ **Best Budget Choice**
+
+---
+
+### 5. **Scripting & Automation** (`cursorrules-scripting.md`)
 
 ![Python](https://img.shields.io/badge/Python-3.x-blue.svg)
 ![Shell](https://img.shields.io/badge/Shell-Bash/Zsh-green.svg)
@@ -156,6 +179,9 @@ cp cursorrules-react-vite.md /path/to/your/web-app/.cursorrules
 
 # For Node.js/Express project
 cp cursorrules-node-express.md /path/to/your/backend-api/.cursorrules
+
+# For JavaScript Strict Mode project
+cp cursorrules-javascript-strict-mode.md /path/to/your/javascript-project/.cursorrules
 
 # For scripting project
 cp cursorrules-scripting.md /path/to/your/scripts/.cursorrules
@@ -197,6 +223,7 @@ my-monorepo/
 | **C++/JUCE** | Claude Sonnet 4.5 | Composer 1 | Haiku 4.5, GPT-5.1 Codex Fast |
 | **React/Vite** | Composer 1 | Claude Sonnet 4.5 | Haiku 4.5 ⭐, GPT-5.1 Codex Low Fast |
 | **Node.js/Express** | Claude Sonnet 4.5 | Composer 1 | Haiku 4.5 ⭐, GPT-5.1 Codex Fast |
+| **JavaScript Strict Mode** | Claude Sonnet 4.5 | Composer 1 | Haiku 4.5 ⭐, GPT-5.1 Codex Fast |
 | **Scripting** | Haiku 4.5 ⭐ | GPT-5.1 Codex | GPT-5.1 Codex Low Fast, GPT-5 Low Fast |
 
 ⭐ = Best Budget Choice (Unlimited, Very Fast)
