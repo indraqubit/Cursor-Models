@@ -121,9 +121,9 @@ This directory contains `.cursorrules` templates optimized for different develop
 
 ### 4. **JavaScript Strict Mode Configuration** (`cursorrules-javascript-strict-mode.md`)
 
-<img src="https://img.shields.io/badge/JavaScript-ES6+-yellow.svg">
-<img src="https://img.shields.io/badge/Strict%20Mode-Enforcement-red.svg">
-<img src="https://img.shields.io/badge/ESLint-Configuration-blue.svg">
+![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-yellow.svg)
+![Strict Mode](https://img.shields.io/badge/Strict%20Mode-Enforcement-red.svg)
+![ESLint](https://img.shields.io/badge/ESLint-Configuration-blue.svg)
 
 **Context**: JavaScript Strict Mode, Code Quality, Runtime Safety  
 **Tech Stack**: JavaScript, ESLint, TypeScript, Babel
