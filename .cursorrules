@@ -1,0 +1,124 @@
+{
+  "projectConfig": {
+    "name": "Audio Plugin + Dashboard",
+    "stack": ["C++17", "JUCE 8", "React", "Vite", "TypeScript"],
+    "architecture": "monorepo"
+  },
+  "generalPrinciples": {
+    "style": "DRY, brutal & ringkas",
+    "approach": "vibe coding → cleanup later",
+    "shipping": "MVP first, perfect never",
+    "communication": "Indonesian + English tech terms"
+  },
+  "cppStandards": {
+    "standard": "C++17",
+    "framework": "JUCE 8",
+    "namingConventions": {
+      "classes": "PascalCase",
+      "methods": "camelCase",
+      "members": "camelCase",
+      "constants": "SCREAMING_SNAKE_CASE"
+    },
+    "audioSpecificRules": [
+      "Realtime-safe processing",
+      "No allocations in processBlock/getNextAudioBlock",
+      "Thread safety with juce::CriticalSection",
+      "Buffer size support: 32-2048 samples",
+      "No new/delete in audio thread",
+      "Use juce::AudioBuffer, avoid raw pointers",
+      "Atomic operations for parameter changes",
+      "Lock-free where possible"
+    ]
+  },
+  "reactStandards": {
+    "version": "18+",
+    "bundler": "Vite 5",
+    "language": "TypeScript strict mode",
+    "structure": {
+      "components": "src/components/{feature}/ComponentName.tsx",
+      "hooks": "src/hooks/use{Feature}.ts",
+      "utils": "src/utils/{category}.ts",
+      "types": "src/types/{feature}.ts"
+    },
+    "style": {
+      "css": "Tailwind CSS v4",
+      "components": "shadcn/ui preferred",
+      "responsive": "mobile-first"
+    },
+    "stateManagement": {
+      "local": "useState/useReducer",
+      "global": "Zustand or Context",
+      "server": "TanStack Query for API"
+    },
+    "principles": [
+      "Functional components only",
+      "Custom hooks for reusable logic",
+      "Avoid prop drilling > 2 levels",
+      "Memoize expensive computations"
+    ]
+  },
+  "apiConventions": {
+    "convention": "RESTful",
+    "format": "JSON",
+    "auth": "JWT (juwita-sdk style)",
+    "errorFormat": {
+      "schema": "{ error: string, code: number, details?: any }"
+    },
+    "statusCodes": "Standard HTTP"
+  },
+  "testing": {
+    "cpp": {
+      "framework": "JUCE UnitTest",
+      "focus": ["DSP algorithms", "parameter ranges", "thread safety"]
+    },
+    "react": {
+      "framework": "Vitest + Testing Library",
+      "focus": ["user interactions", "API integration", "edge cases"]
+    }
+  },
+  "workflow": {
+    "cursorComposer": ["feature implementation", "refactoring", "bug fixes"],
+    "cline": ["testing", "benchmarking", "deployment scripts"],
+    "copilot": ["boilerplate", "repetitive code", "common patterns"]
+  },
+  "performance": {
+    "cpp": "Target <1ms processBlock at 512 samples/44.1kHz",
+    "react": ["Lazy loading", "virtualization", "debouncing"]
+  },
+  "security": {
+    "license": "Validate JWT signatures",
+    "api": ["Rate limiting", "input validation", "CORS"],
+    "storage": "Never store sensitive data in localStorage"
+  },
+  "git": {
+    "commits": "Conventional Commits (feat:, fix:, refactor:)",
+    "branches": ["feature/*", "bugfix/*", "hotfix/*"],
+    "preCommit": ["lint", "format", "test"]
+  },
+  "automationTasks": {
+    "test_audio": {
+      "trigger": "After C++ file save",
+      "description": "Run audio tests automatically"
+    },
+    "benchmark": {
+      "trigger": "Manual",
+      "description": "Performance testing for DSP code"
+    },
+    "test_react": {
+      "trigger": "Before commit",
+      "description": "Run React tests before committing"
+    },
+    "dev_full_stack": {
+      "trigger": "Manual",
+      "description": "Start full-stack development server"
+    },
+    "build_plugin": {
+      "trigger": "Manual",
+      "description": "Release build for audio plugin"
+    },
+    "export_onnx": {
+      "trigger": "After model training",
+      "description": "Export trained model to ONNX format"
+    }
+  }
+}
