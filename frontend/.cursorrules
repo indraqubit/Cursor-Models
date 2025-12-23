@@ -1,0 +1,96 @@
+{
+  "viteConfiguration": {
+    "version": "5+",
+    "plugins": ["@vitejs/plugin-react-swc", "vite-plugin-pwa"],
+    "optimization": {
+      "splitChunks": ["vendor", "components", "utils"],
+      "minify": "esbuild in production"
+    },
+    "dev": {
+      "port": 3000,
+      "proxy": {
+        "/api": "http://localhost:8080"
+      }
+    }
+  },
+  "importStandards": {
+    "aliases": {
+      "@/components": "./src/components",
+      "@/hooks": "./src/hooks",
+      "@/utils": "./src/utils",
+      "@/types": "./src/types",
+      "@/api": "./src/api"
+    },
+    "preferences": [
+      "Prefer named imports",
+      "Import sorting: React first, third-party, then local"
+    ]
+  },
+  "typescript": {
+    "strictMode": true,
+    "rules": [
+      "No 'any' without comment",
+      "Interfaces for public APIs, types for internal",
+      "Use 'unknown' over 'any'"
+    ]
+  },
+  "componentTemplate": {
+    "pattern": "import { FC } from 'react';\n\ninterface {Name}Props {\n  // props here\n}\n\nexport const {Name}: FC<{Name}Props> = ({ }) => {\n  return (\n    <div>\n      {/* component */}\n    </div>\n  );\n};"
+  },
+  "projectStructure": {
+    "components": {
+      "path": "src/components/{feature}/ComponentName.tsx",
+      "description": "Feature-first component organization"
+    },
+    "hooks": {
+      "path": "src/hooks/use{Feature}.ts",
+      "description": "Custom React hooks with 'use' prefix"
+    },
+    "utils": {
+      "path": "src/utils/{category}.ts",
+      "description": "Utility functions grouped by category"
+    },
+    "types": {
+      "path": "src/types/{feature}.ts",
+      "description": "TypeScript types and interfaces"
+    },
+    "api": {
+      "path": "src/api/{endpoint}.ts",
+      "description": "API client and endpoint definitions"
+    }
+  },
+  "bestPractices": {
+    "components": [
+      "Functional components only",
+      "Use FC or React.FC for type safety",
+      "Keep components small and focused",
+      "Extract reusable logic to custom hooks"
+    ],
+    "stateManagement": [
+      "useState for local state",
+      "useReducer for complex state logic",
+      "Zustand or Context for global state",
+      "TanStack Query for server state"
+    ],
+    "performance": [
+      "Lazy loading for routes",
+      "Code splitting for large components",
+      "Virtualization for long lists",
+      "Debouncing for expensive operations",
+      "Memoize with useMemo/useCallback when needed"
+    ],
+    "styling": [
+      "Tailwind CSS v4 preferred",
+      "shadcn/ui for component library",
+      "Mobile-first responsive design",
+      "CSS modules for component-specific styles"
+    ]
+  },
+  "avoidPatterns": [
+    "Prop drilling beyond 2 levels",
+    "Using 'any' type without justification",
+    "Inline function definitions in JSX for callbacks",
+    "Missing dependencies in useEffect",
+    "Mutating state directly"
+  ]
+}

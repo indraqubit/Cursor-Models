@@ -1,0 +1,151 @@
+{
+  "cppConfiguration": {
+    "standard": "C++17",
+    "framework": "JUCE 8",
+    "buildSystem": "CMake"
+  },
+  "namingConventions": {
+    "classes": "PascalCase (e.g., AudioProcessor, FilterDesigner)",
+    "methods": "camelCase (e.g., processBlock, prepareToPlay)",
+    "members": "camelCase (e.g., sampleRate, bufferSize)",
+    "constants": "SCREAMING_SNAKE_CASE (e.g., MAX_BUFFER_SIZE)",
+    "juceTypes": "Follow JUCE conventions (e.g., juce::String, juce::AudioBuffer<float>)"
+  },
+  "realtimeSafety": {
+    "critical": [
+      "No allocations in processBlock() or getNextAudioBlock()",
+      "No new/delete in audio thread",
+      "No locks in audio callback",
+      "No virtual function calls in hot paths",
+      "No system calls in audio thread"
+    ],
+    "allocations": [
+      "Pre-allocate all buffers in prepareToPlay()",
+      "Use juce::AudioBuffer for audio data",
+      "Avoid std::vector resize in audio thread",
+      "Use fixed-size arrays or pre-allocated pools"
+    ],
+    "threadSafety": [
+      "Use juce::CriticalSection for GUI-audio communication",
+      "Prefer lock-free structures (atomics, lock-free queues)",
+      "Use std::atomic for simple parameter changes",
+      "Avoid blocking operations in audio thread"
+    ]
+  },
+  "audioProcessing": {
+    "bufferSizes": {
+      "supported": "32-2048 samples",
+      "typical": "512 samples at 44.1kHz",
+      "performanceTarget": "<1ms processBlock execution"
+    },
+    "parameterManagement": [
+      "Use juce::AudioProcessorValueTreeState",
+      "Atomic operations for parameter updates",
+      "Smooth parameter changes to avoid clicks",
+      "Thread-safe parameter access"
+    ],
+    "dspPatterns": [
+      "Use juce::dsp module for filters and effects",
+      "Implement prepare/process/reset pattern",
+      "Use juce::dsp::ProcessSpec for configuration",
+      "Leverage SIMD when possible"
+    ]
+  },
+  "bestPractices": {
+    "raii": [
+      "Always use smart pointers (unique_ptr, shared_ptr)",
+      "No raw pointers except for non-owning references",
+      "Use RAII for resource management"
+    ],
+    "constCorrectness": [
+      "Mark const all methods that don't modify state",
+      "Use const references for read-only parameters",
+      "Const member variables where appropriate"
+    ],
+    "errorHandling": [
+      "Use jassert for debug-only checks",
+      "Validate inputs in prepareToPlay(), not processBlock()",
+      "Use std::optional for optional values",
+      "Noexcept for functions that shouldn't throw"
+    ]
+  },
+  "performance": {
+    "optimization": [
+      "Use SIMD via juce::dsp::SIMDRegister",
+      "Cache-friendly memory access patterns",
+      "Minimize branches in hot paths",
+      "Use lookup tables for complex calculations",
+      "Profile before optimizing"
+    ],
+    "targets": {
+      "latency": "<5ms total plugin latency",
+      "processing": "<1ms at 512 samples/44.1kHz",
+      "cpuUsage": "<10% on modern CPU"
+    }
+  },
+  "juceSpecific": {
+    "coreClasses": [
+      "juce::AudioProcessor - Base class for plugins",
+      "juce::AudioProcessorEditor - UI component",
+      "juce::AudioProcessorValueTreeState - Parameter management",
+      "juce::AudioBuffer<float> - Audio data container"
+    ],
+    "dspModules": [
+      "juce::dsp::ProcessorChain - Chain DSP processors",
+      "juce::dsp::StateVariableFilter - Flexible filter",
+      "juce::dsp::Reverb - Reverb effect",
+      "juce::dsp::Compressor - Dynamics processing"
+    ],
+    "utilities": [
+      "juce::NormalisableRange - Parameter ranges",
+      "juce::SmoothedValue - Parameter smoothing",
+      "juce::Random - Random number generation",
+      "juce::MidiMessage - MIDI handling"
+    ]
+  },
+  "fileStructure": {
+    "source": "Source/",
+    "processor": "Source/PluginProcessor.h/cpp",
+    "editor": "Source/PluginEditor.h/cpp",
+    "dsp": "Source/DSP/*.h/cpp",
+    "parameters": "Source/PluginParameters.h"
+  },
+  "testing": {
+    "framework": "JUCE UnitTest",
+    "focus": [
+      "DSP algorithm correctness",
+      "Parameter range validation",
+      "Thread safety verification",
+      "Performance benchmarks",
+      "Edge cases (silence, clipping, NaN)"
+    ],
+    "patterns": [
+      "Test with known input/output pairs",
+      "Verify real-time constraints",
+      "Check for memory leaks",
+      "Validate parameter automation"
+    ]
+  },
+  "antiPatterns": [
+    "Allocating memory in processBlock()",
+    "Using locks in audio callback",
+    "Virtual function calls in hot paths",
+    "Accessing GUI from audio thread",
+    "Blocking operations in real-time code",
+    "Using std::cout or logging in processBlock()",
+    "Ignoring buffer size changes"
+  ],
+  "documentation": {
+    "required": [
+      "Document DSP algorithms with references",
+      "Explain non-obvious optimizations",
+      "Note real-time safety guarantees",
+      "Include performance characteristics"
+    ],
+    "style": [
+      "Use Doxygen-style comments",
+      "Document parameter ranges and units",
+      "Include usage examples for complex APIs"
+    ]
+  }
+}

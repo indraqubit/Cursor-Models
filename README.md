@@ -166,10 +166,200 @@ This directory contains `.cursorrules` templates optimized for different develop
 
 ---
 
+## 🎵 Audio Plugin + Dashboard Project Example
+
+This repository includes a complete example structure for a React+Vite+JUCE audio plugin project with comprehensive `.cursorrules` configuration.
+
+### Project Structure
+
+```
+audio-plugin-project/
+├── .cursorrules               # Root config with monorepo settings
+├── juce/
+│   ├── .cursorrules          # C++ specific rules
+│   ├── Source/
+│   │   ├── PluginProcessor.h/cpp
+│   │   ├── PluginEditor.h/cpp
+│   │   └── DSP/
+│   └── CMakeLists.txt
+├── frontend/
+│   ├── .cursorrules          # React/Vite specific rules
+│   ├── src/
+│   │   ├── components/
+│   │   ├── hooks/
+│   │   ├── utils/
+│   │   ├── types/
+│   │   └── api/
+│   ├── vite.config.ts
+│   └── package.json
+├── api/
+│   ├── server.ts
+│   └── routes/
+└── scripts/
+    ├── export_model.py
+    └── deploy.sh
+```
+
+### Workflow Patterns
+
+**Cursor Composer** - Best for:
+- Feature implementation across multiple files
+- Large-scale refactoring (e.g., renaming components, updating APIs)
+- Bug fixes that require changes in multiple files
+- Component migrations and restructuring
+
+**Cline** - Best for:
+- Running test suites and analyzing results
+- Performance benchmarking and profiling
+- Deployment automation
+- CI/CD pipeline setup
+
+**Copilot** - Best for:
+- Boilerplate code generation
+- Repetitive code patterns
+- Autocomplete for common patterns
+- Quick code snippets
+
+### Development Setup
+
+#### Prerequisites
+```bash
+# C++ Development
+- CMake 3.15+
+- JUCE 8
+- C++17 compiler (GCC, Clang, MSVC)
+
+# Frontend Development
+- Node.js 20+
+- npm or pnpm
+- Vite 5
+
+# Python (for scripts)
+- Python 3.x
+```
+
+#### Quick Start
+
+1. **Clone and setup:**
+```bash
+git clone <your-repo>
+cd audio-plugin-project
+```
+
+2. **Build JUCE plugin:**
+```bash
+cd juce
+cmake -B build
+cmake --build build --config Release
+```
+
+3. **Start frontend dev server:**
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+4. **Run API server:**
+```bash
+cd api
+npm install
+npm run dev
+```
+
+### Testing & Benchmarking
+
+#### C++ Audio Tests
+```bash
+# Run JUCE unit tests
+cd juce/build
+ctest --verbose
+
+# Benchmark DSP performance
+./benchmark_dsp --samples=512 --samplerate=44100
+```
+
+#### React Tests
+```bash
+cd frontend
+npm test                    # Run all tests
+npm test -- --ui           # Interactive test UI
+npm test -- --coverage     # Coverage report
+```
+
+#### Integration Tests
+```bash
+# Full stack integration test
+npm run test:integration
+```
+
+### Automation Tasks (MCP-style)
+
+The project includes automated tasks triggered by various events:
+
+| Task | Trigger | Command | Description |
+|------|---------|---------|-------------|
+| **test_audio** | After C++ file save | `npm run test:audio` | Run JUCE unit tests automatically |
+| **benchmark** | Manual | `npm run benchmark` | Performance testing for DSP code |
+| **test_react** | Before commit | `npm run test:react` | Run React tests before committing |
+| **dev_full_stack** | Manual | `npm run dev` | Start all dev servers (frontend + API) |
+| **build_plugin** | Manual | `npm run build:plugin` | Release build for audio plugin |
+| **export_onnx** | After model training | `python scripts/export_model.py` | Export trained model to ONNX |
+
+### Performance Targets
+
+**C++ Audio Processing:**
+- processBlock execution: <1ms at 512 samples/44.1kHz
+- Total plugin latency: <5ms
+- CPU usage: <10% on modern CPU
+- Supported buffer sizes: 32-2048 samples
+
+**React Frontend:**
+- First Contentful Paint: <1s
+- Time to Interactive: <2s
+- Lazy loading for routes
+- Code splitting for large components
+
+### Security Guidelines
+
+**JWT Authentication:**
+- Validate signatures using juwita-sdk style
+- Token expiration: 1 hour (refresh token: 7 days)
+- Store tokens securely, never in localStorage
+
+**API Security:**
+- Rate limiting: 100 requests/minute per IP
+- Input validation on all endpoints
+- CORS configuration for allowed origins
+- Sanitize all user inputs
+
+**C++ Security:**
+- Buffer overflow protection
+- Validate all parameter ranges
+- Safe string handling (juce::String)
+- No raw pointers in public APIs
+
+---
+
 ## 🚀 How to Use
 
 ### Step 1: Copy Template to Your Project
 
+**Option A: Use JSON Configuration Files (Recommended for Monorepos)**
+```bash
+# For complete Audio Plugin + Dashboard monorepo
+# Copy the entire project structure with JSON .cursorrules files
+cp -r .cursorrules /path/to/your/audio-plugin-project/
+cp -r frontend/.cursorrules /path/to/your/audio-plugin-project/frontend/
+cp -r juce/.cursorrules /path/to/your/audio-plugin-project/juce/
+
+# The repository includes JSON-format .cursorrules for:
+# - Root monorepo configuration (.cursorrules)
+# - Frontend React/Vite (frontend/.cursorrules)
+# - JUCE C++ audio (juce/.cursorrules)
+```
+
+**Option B: Use Markdown Templates (For Single-Context Projects)**
 ```bash
 # For C++/JUCE project
 cp cursorrules-cpp-juce.md /path/to/your/audio-plugin-project/.cursorrules
